@@ -1,0 +1,170 @@
+:root {
+    --branco: #FFFFFF;
+    --azul-escuro: #14275A;
+    --azul-claro: #3553A6;
+    --cinza: #DADADA;
+
+    --fonte-grande: 1.562rem;
+    --fonte-media: 1.250rem;
+    --fonte-pequena: 1.000rem;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: var(--azul-escuro);
+    height: 12vh;
+    display: flex;
+    padding: 0 10%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile_menu {
+    display: none;
+    cursor: pointer;
+}
+
+.nav_list {
+    display: flex;
+}
+
+.nav_list__itens {
+    margin-left: 5%;
+}
+
+.nav_list__itens a {
+    display: flex;
+    gap: 8px;
+    color: var(--branco);
+    font-size: var(--fonte-pequena);
+    font-weight: medium;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.nav_list__itens a:hover {
+    opacity: 0.75;
+}
+
+.imagem_logo_header {
+    width: 100px;
+}
+
+.secao_sobre {
+    padding: 5% 12%;
+    background: linear-gradient(180deg, #162A61 0%, #688CEE 100%);
+}
+
+.secao_sobre__titulo {
+    font-size: var(--fonte-grande);
+    font-weight: 500;
+    color: var(--branco);
+    text-align: center;
+}
+
+.secao_sobre__subtitulo {
+    font-size: var(--fonte-media);
+    font-weight: 400;
+    color: var(--branco);
+}
+
+.secao_sobre__conteudo {
+    font-size: var(--fonte-pequena);
+    font-weight: 300;
+    color: var(--branco);
+}
+
+.secao_contato {
+    padding-top: 32px;
+    text-align: center;
+}
+
+.secao_contato__titulo {
+    font-size: var(--fonte-media);
+    font-weight: 400;
+}
+
+.secao_contato__conteudo a {
+    text-decoration: none;
+    color: var(--azul-claro);
+    transition: 0.5s;
+}
+
+.secao_contato__conteudo a:hover {
+    opacity: 0.80;
+}
+
+.secao_localizacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 32px 0 32px 0;
+}
+
+.secao_localizacao__titulo {
+    font-size: var(--fonte-media);
+    font-weight: 400;
+}
+
+.secao_localizacao__mapa {
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 var(--cinza), 0 6px 20px 0 var(--cinza);
+}
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 8px 0;
+    background-color: var(--cinza);
+}
+
+.imagem_logo_footer {
+    width: 90px;
+}
+
+@media (max-width: 1000px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .mobile_menu{
+        display: block;
+    }
+
+    .nav_list {
+        position: absolute;
+        top: 12vh;
+        left: 0;
+        width: 50vw;
+        height: 88vh;
+        background-color: var(--azul-escuro);
+        flex-direction: column;
+        gap: 32px;
+        transform: translateX(-100%);
+    }
+}
+
+@media (max-width: 500) {
+    header {
+        height: 10vh;
+    }
+
+    .imagem_logo_header {
+        width: 80px;
+    }
+
+    .secao_sobre {
+        padding: 5% 5%;;
+    }
+
+    .imagem_logo_footer {
+        width: 70px;
+    }
+}

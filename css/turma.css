@@ -1,0 +1,175 @@
+:root {
+    --branco: #FFFFFF;
+    --azul_escuro: #14275A;
+    --azul_medio: #143BA6;
+    --azul_claro: #3553A6; 
+    --cinza: #DADADA;
+
+    --fonte-grande: 1.562rem;
+    --fonte-media: 1.250rem;
+    --fonte-pequena: 1.000rem;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: var(--azul_escuro);
+    height: 12vh;
+    display: flex;
+    padding: 0 10%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile_menu {
+    display: none;
+    cursor: pointer;
+}
+
+.nav_list {
+    display: flex;
+}
+
+.nav_list__itens {
+    margin-left: 5%;
+}
+
+.nav_list__itens a {
+    display: flex;
+    gap: 8px;
+    color: var(--branco);
+    font-size: var(--fonte-pequena);
+    font-weight: medium;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.nav_list__itens a:hover {
+    opacity: 0.75;
+}
+
+.imagem_logo_header {
+    width: 100px;
+}
+
+main {
+    margin: 5vh 20vh;
+}
+
+.sobre_turma__titulo {
+    font-size: var(--fonte-grande);
+    font-weight: 500;
+}
+
+.sobre_turma__imagem_alunos {
+    width: 50%;
+    border-radius: 6px;
+    padding: 32px 0;
+}
+
+.secao_cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 26px;
+    justify-content: center;
+}
+
+.card {
+    width: 150px;
+    height: 180px;
+    text-align: center;
+    padding: 16px 16px;
+    border: 1px solid var(--azul_medio);
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 #00010101;
+}
+
+.card__nome {
+    font-size: var(--fonte-grande);
+}
+
+.botao_perfil {
+    border: none;
+    width: 105px;
+    height: 32px;
+    background-color: var(--azul_claro);
+    color: var(--branco);
+    font-size: 1.000rem;
+    border-radius: 6px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 8px 0;
+    background-color: var(--cinza);
+}
+
+.imagem_logo_footer {
+    width: 90px;
+}
+
+@media (max-width: 1000px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .mobile_menu{
+        display: block;
+    }
+
+    .nav_list {
+        position: absolute;
+        top: 12vh;
+        left: 0;
+        width: 50vw;
+        height: 88vh;
+        background-color: var(--azul-escuro);
+        flex-direction: column;
+        gap: 32px;
+        transform: translateX(-100%);
+    }
+
+    main {
+        margin: 5vh 10vh;
+    }
+
+    .sobre_turma__imagem_alunos {
+        width: 70%;
+    }
+
+    .card {
+        width: 125px;
+    }
+}
+
+@media (max-width: 500px) {
+    header {
+        height: 10vh;
+    }
+
+    main {
+        margin: 5vh 4vh;
+    }
+
+    .sobre_turma__imagem_alunos {
+        width: 80%;
+    }
+
+    .card {
+        width: 100px;
+        height: 160px;
+    }
+
+    .imagem_logo_header {
+        width: 80px;
+    }
+
+    .imagem_logo_footer {
+        width: 70px;
+    }
+}

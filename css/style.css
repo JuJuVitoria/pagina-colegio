@@ -1,0 +1,168 @@
+:root {
+    --branco: #ffffff;
+    --azul-escuro: #14275A;
+    --cinza: #dadada;
+    --azul-claro: #3553A6;
+
+    --fonte-grande: 1.562rem;
+    --fonte-media: 1.250rem;
+    --fonte-pequena: 1.000rem;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: var(--azul-escuro);
+    height: 12vh;
+    display: flex;
+    padding: 0 10%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile_menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile_menu__titulo_pagina {
+    font-size: var(--fonte-media);
+    color: var(--branco);
+}
+
+.nav_list {
+    display: flex;
+}
+
+.nav_list__itens {
+    margin-left: 5%;
+}
+
+.nav_list__itens a {
+    display: flex;
+    gap: 8px;
+    color: var(--branco);
+    font-size: var(--fonte-pequena);
+    font-weight: medium;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.nav_list__itens a:hover {
+    opacity: 0.75;
+}
+
+.imagem_logo_header {
+    width: 100px;
+}
+
+main {
+    margin: 5vh 20vh;
+}
+
+.centralizado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.centralizado h1{
+    text-align: center;
+}
+
+.titulo {
+    font-size: var(--fonte-grande);
+    font-weight: 500;
+}
+
+.imagem_codigos {
+    width: 400px;
+    border-radius: 4px;
+}
+
+.sobre-projeto {
+    padding-top: 32px;
+}
+
+.sobre-projeto__subtitulo {
+    font-size: var(--fonte-media);
+    font-weight: 400;
+}
+
+.sobre-projeto__conteudo {
+    font-size: var(--fonte-pequena);
+    font-weight: 300;
+}
+
+.destaque_texto {
+    font-weight: 400;
+    color: var(--azul-claro);
+}
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 8px 0;
+    background-color: var(--cinza);
+}
+
+.imagem_logo_footer {
+    width: 90px;
+}
+
+@media (max-width: 1000px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .mobile_menu{
+        display: block;
+    }
+
+    .nav_list {
+        position: absolute;
+        top: 12vh;
+        left: 0;
+        width: 50vw;
+        height: 88vh;
+        background-color: var(--azul-escuro);
+        flex-direction: column;
+        gap: 32px;
+        transform: translateX(-100%);
+    }
+
+    main {
+        margin: 5% 10%;
+    }
+
+    .imagem_codigos {
+        width: 300px;
+    }
+}
+
+@media (max-width: 500px){
+    header {
+        height: 10vh;
+    }
+
+    .imagem_logo_header {
+        width: 80px;
+    }
+
+    main {
+        margin: 5% 5%;
+    }
+
+    .imagem_codigos {
+        width: 80%;
+    }
+
+    .imagem_logo_footer {
+        width: 70px;
+    }
+}
