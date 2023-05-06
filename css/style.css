@@ -17,25 +17,44 @@ body {
 
 header {
     background-color: var(--azul-escuro);
-    height: 12vh;
+    height: 10vh;
     display: flex;
     padding: 0 10%;
     justify-content: space-between;
     align-items: center;
 }
 
-.mobile_menu {
+.burger {
     display: none;
     cursor: pointer;
 }
 
-.mobile_menu__titulo_pagina {
-    font-size: var(--fonte-media);
-    color: var(--branco);
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--branco);
+    margin: 5px;
+    transition: 0.3s;
+}
+
+.burger.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+  
+.burger.active .line2 {
+    opacity: 0;
+}
+  
+.burger.active .line3 {
+    transform: rotate(45deg) translate(-4px, -4px);
 }
 
 .nav_list {
     display: flex;
+}
+
+.nav_list.active {
+    transform: translateX(0%);
 }
 
 .nav_list__itens {
@@ -57,7 +76,18 @@ header {
 }
 
 .imagem_logo_header {
-    width: 100px;
+    width: 5rem;
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 main {
@@ -112,7 +142,7 @@ footer {
 }
 
 .imagem_logo_footer {
-    width: 90px;
+    width: 4rem;
 }
 
 @media (max-width: 1000px) {
@@ -120,20 +150,26 @@ footer {
         overflow-x: hidden;
     }
 
-    .mobile_menu{
+    .burger {
         display: block;
     }
 
     .nav_list {
         position: absolute;
-        top: 12vh;
+        top: 10vh;
         left: 0;
-        width: 50vw;
-        height: 88vh;
+        width: 50%;
+        height: 90vh;
         background-color: var(--azul-escuro);
+        padding: 1rem 3rem 5rem 2rem;
         flex-direction: column;
-        gap: 32px;
+        gap: 2rem;
         transform: translateX(-100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav_list__itens {
+        opacity: 0;
     }
 
     main {
@@ -146,12 +182,8 @@ footer {
 }
 
 @media (max-width: 500px){
-    header {
-        height: 10vh;
-    }
-
-    .imagem_logo_header {
-        width: 80px;
+    .nav_list__itens {
+        opacity: 0;
     }
 
     main {
@@ -160,9 +192,5 @@ footer {
 
     .imagem_codigos {
         width: 80%;
-    }
-
-    .imagem_logo_footer {
-        width: 70px;
     }
 }
