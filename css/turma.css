@@ -114,17 +114,28 @@ main {
 }
 
 .card {
-    width: 150px;
+    width: 125px;
     height: 180px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
     padding: 16px 16px;
     border: 1px solid var(--azul_medio);
     border-radius: 6px;
     box-shadow: 0 4px 8px 0 #00010101;
 }
 
+.card__foto_perfil {
+    width: 56px;
+    height: 56px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
 .card__nome {
-    font-size: var(--fonte-grande);
+    text-align: center;
+    font-size: var(--fonte-pequena);
 }
 
 .botao_perfil {
@@ -135,6 +146,78 @@ main {
     color: var(--branco);
     font-size: 1.000rem;
     border-radius: 6px;
+    opacity: .8;
+    transition: .4s;
+}
+
+.botao_perfil:hover {
+    opacity: 1;
+}
+
+#fade, #moda {
+    transition: .5s;
+    opacity: 1;
+    pointer-events: all;
+}
+
+#fade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 5;
+}
+
+#modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--branco);
+    z-index: 10;
+    width: 500px;
+    max-width: 80%;
+    padding: 1.2rem;
+    border-radius: .5rem;
+}
+
+.modal_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--cinza);
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+
+.modal_body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.modal__foto_perfil {
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.icones_redes_sociais {
+    width: 24px;
+}
+
+#modal.hide,
+#fade.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#modal.hide {
+    top: 0;
 }
 
 footer {
@@ -163,6 +246,7 @@ footer {
         left: 0;
         width: 50%;
         height: 90vh;
+        z-index: 15;
         padding: 1rem 10%;
         background-color: var(--azul_escuro);
         flex-direction: column;
@@ -203,7 +287,7 @@ footer {
 
     .card {
         width: 100px;
-        height: 160px;
+        height: 170px;
     }
 
     .imagem_logo_header {
