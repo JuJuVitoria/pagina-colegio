@@ -115,7 +115,7 @@ main {
 
 .card {
     width: 125px;
-    height: 180px;
+    height: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -136,88 +136,6 @@ main {
 .card__nome {
     text-align: center;
     font-size: var(--fonte-pequena);
-}
-
-.botao_perfil {
-    border: none;
-    width: 105px;
-    height: 32px;
-    background-color: var(--azul_claro);
-    color: var(--branco);
-    font-size: 1.000rem;
-    border-radius: 6px;
-    opacity: .8;
-    transition: .4s;
-}
-
-.botao_perfil:hover {
-    opacity: 1;
-}
-
-#fade, #moda {
-    transition: .5s;
-    opacity: 1;
-    pointer-events: all;
-}
-
-#fade {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 5;
-}
-
-#modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--branco);
-    z-index: 10;
-    width: 500px;
-    max-width: 80%;
-    padding: 1.2rem;
-    border-radius: .5rem;
-}
-
-.modal_header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--cinza);
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-}
-
-.modal_body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.modal__foto_perfil {
-    width: 64px;
-    height: 64px;
-    border-radius: 100%;
-    object-fit: cover;
-}
-
-.icones_redes_sociais {
-    width: 24px;
-}
-
-#modal.hide,
-#fade.hide {
-    opacity: 0;
-    pointer-events: none;
-}
-
-#modal.hide {
-    top: 0;
 }
 
 footer {
